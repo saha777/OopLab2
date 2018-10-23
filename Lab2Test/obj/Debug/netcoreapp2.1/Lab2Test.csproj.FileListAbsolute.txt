@@ -1,0 +1,17 @@
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\bin\Debug\netcoreapp2.1\Lab2Test.deps.json
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\bin\Debug\netcoreapp2.1\Lab2Test.runtimeconfig.json
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\bin\Debug\netcoreapp2.1\Lab2Test.runtimeconfig.dev.json
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\bin\Debug\netcoreapp2.1\Lab2Test.dll
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\bin\Debug\netcoreapp2.1\Lab2Test.pdb
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\bin\Debug\netcoreapp2.1\Lab2.dll
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\bin\Debug\netcoreapp2.1\Lab2.pdb
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\obj\Debug\netcoreapp2.1\Lab2Test.csprojAssemblyReference.cache
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\obj\Debug\netcoreapp2.1\Lab2Test.csproj.CoreCompileInputs.cache
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\obj\Debug\netcoreapp2.1\Lab2Test.AssemblyInfoInputs.cache
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\obj\Debug\netcoreapp2.1\Lab2Test.AssemblyInfo.cs
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\obj\Debug\netcoreapp2.1\Lab2Test.csproj.CopyComplete
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\obj\Debug\netcoreapp2.1\Lab2Test.dll
+E:\workspace\CSharp\OOP\Lab2\Lab2Test\obj\Debug\netcoreapp2.1\Lab2Test.pdb

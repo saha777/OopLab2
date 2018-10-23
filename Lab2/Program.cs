@@ -60,7 +60,7 @@ namespace Lab2
                     return commands[index - 1];
                 }
             } catch (FormatException e) {  }
-            return chooseCommand(commands, robot, true);
+            return ChooseCommand(commands, robot, true);
         }
     }
 }

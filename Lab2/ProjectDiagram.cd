@@ -7,8 +7,8 @@
       <FileName>State\Context.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Property Name="State" />
       <Property Name="Robot" />
+      <Property Name="State" />
     </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Field Name="robotSnapshots" />
@@ -68,14 +68,21 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Lab2.Decorator.BoxFactory">
-    <Position X="1.75" Y="7.25" Width="1.5" />
+    <Position X="0.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\BoxFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
+  <Class Name="Lab2.Decorator.SimpleBox">
+    <Position X="1.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAIAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Decorator\SimpleBox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
   <Interface Name="Lab2.Factory.IRobotFactory">
-    <Position X="1.75" Y="5.25" Width="1.5" />
+    <Position X="2.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Factory\RobotFactory.cs</FileName>
