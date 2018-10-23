@@ -18,5 +18,10 @@ namespace Lab2.Command
         {
             context.SetState(null);
         }
+
+        public override string ToString()
+        {
+            return "close game";
+        }
     }
 }

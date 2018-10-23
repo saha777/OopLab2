@@ -13,13 +13,13 @@ namespace Lab2.Memento
 
         public RobotSnapshot(Robot robot, State.State state)
         {
-            this.robot = robot;
+            this.robot = robot.Clone() as Robot;
             this.state = state;
         }
 
         public void BackUp(Context context)
         {
-            context.SetRobot(robot.Clone() as Robot);
+            context.SetRobot(robot);
             context.SetState(state);
         }
 

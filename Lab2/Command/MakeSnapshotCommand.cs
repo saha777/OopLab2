@@ -19,5 +19,10 @@ namespace Lab2.Command
         {
             context.AddSnaphot(new RobotSnapshot(context.Robot, context.State));
         }
+
+        public override string ToString()
+        {
+            return "make snapshot";
+        }
     }
 }

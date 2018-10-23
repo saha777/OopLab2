@@ -22,5 +22,10 @@ namespace Lab2.Command
             robotSnapshot.BackUp(context);
             context.SetState(StateFactory.Create(EState.DECIDING, context));
         }
+
+        public override string ToString()
+        {
+            return "back up to " + robotSnapshot.ToString();
+        }
     }
 }

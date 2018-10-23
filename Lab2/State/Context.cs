@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Lab2.State
 {
-    public class Context
+    public class Context : IContext
     {
         public Robot Robot { get; private set; }
         public State State { get; private set; }
@@ -27,21 +27,25 @@ namespace Lab2.State
 
         public void SetRobot(Robot robot)
         {
-            if (State is StartGameState)
+            if (State is StartGameState || State is BackUpState)
             {
                 Robot = robot;
             }
         }
 
-        public void Run()
+        public List<ICommand> Execute(ICommand command = null)
         {
-            while(State != null)
+            if (State == null)
             {
-                if (Robot != null && Robot.BatteryBalance < 0) {
-                    new EndGameCommand(this).Execute();
-                }
-                State.Execute();
+                return null;
             }
+            else if (command == null)
+            {
+                return State.Commands;
+            }
+
+            command.Execute();
+            return State == null ? null : State.Commands;
         }
 
         public void AddSnaphot(RobotSnapshot robotSnapshot)

@@ -18,5 +18,10 @@ namespace Lab2.Command
         {
             context.SetState(StateFactory.Create(EState.END, context));
         }
+
+        public override string ToString()
+        {
+            return "end game";
+        }
     }
 }

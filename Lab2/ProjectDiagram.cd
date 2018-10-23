@@ -1,25 +1,32 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="Lab2.State.Context">
-    <Position X="4.5" Y="4.25" Width="1.5" />
+    <Position X="4.5" Y="4" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQABAAAAAAAAAAIAAAAACAABAAAAAAAAAAABABAAAI=</HashCode>
+      <HashCode>AAQABAAAAAAAAAQIAAAAACAABAAAAAAAAAAABABAAAA=</HashCode>
       <FileName>State\Context.cs</FileName>
     </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="State" />
+      <Property Name="Robot" />
+    </ShowAsAssociation>
     <ShowAsCollectionAssociation>
       <Field Name="robotSnapshots" />
     </ShowAsCollectionAssociation>
+    <Lollipop Position="0.2" />
   </Class>
   <Class Name="Lab2.State.State">
-    <Position X="7" Y="3.5" Width="1.5" />
+    <Position X="7" Y="4.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAQAAAAAAAAAAAQAAAAAAAAAAEBAAAA=</HashCode>
+      <HashCode>AAACAgAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
       <FileName>State\State.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
       <Field Name="context" />
-      <Field Name="command" />
     </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Property Name="Commands" />
+    </ShowAsCollectionAssociation>
   </Class>
   <Class Name="Lab2.Memento.RobotSnapshot">
     <Position X="4.5" Y="2" Width="1.5" />
@@ -28,12 +35,12 @@
       <FileName>Memento\RobotSnapshot.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
-      <Field Name="state" />
       <Field Name="robot" />
+      <Field Name="state" />
     </ShowAsAssociation>
   </Class>
   <Class Name="Lab2.Model.Robot">
-    <Position X="9.25" Y="2" Width="1.5" />
+    <Position X="2" Y="2.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Methods" Collapsed="true" />
     </Compartments>
@@ -44,14 +51,14 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="Lab2.Decorator.Box">
-    <Position X="6.75" Y="6.5" Width="1.5" />
+    <Position X="3.75" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AYAAAAAAAIAAIAAEAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\Box.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Lab2.Decorator.BoxDecorator">
-    <Position X="10" Y="7" Width="1.5" />
+    <Position X="6.75" Y="7" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AQAAAAAAAIAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\BoxDecorator.cs</FileName>
@@ -61,21 +68,21 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Lab2.Decorator.BoxFactory">
-    <Position X="4.5" Y="7.5" Width="1.5" />
+    <Position X="1.75" Y="7.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Decorator\BoxFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Lab2.Factory.IRobotFactory">
-    <Position X="10.75" Y="5.25" Width="1.5" />
+    <Position X="1.75" Y="5.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
       <FileName>Factory\RobotFactory.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="Lab2.Command.ICommand">
-    <Position X="8.75" Y="5.25" Width="1.5" />
+    <Position X="7.75" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Command\ICommand.cs</FileName>

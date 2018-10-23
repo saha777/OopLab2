@@ -1,4 +1,5 @@
 ﻿using Lab2.Model;
+using Lab2.State;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -7,16 +8,22 @@ namespace Lab2.Command
 {
     public class SkipCommand : ICommand
     {
-        private Robot robot;
+        private Context context;
 
-        public SkipCommand(Robot robot)
+        public SkipCommand(Context context)
         {
-            this.robot = robot;
+            this.context = context;
         }
 
         public void Execute()
         {
-            robot.MinusBattery();
+            context.Robot.MinusBattery();
+            context.SetState(StateFactory.Create(EState.DECIDING, context));
+        }
+
+        public override string ToString()
+        {
+            return "skip";
         }
     }
 }

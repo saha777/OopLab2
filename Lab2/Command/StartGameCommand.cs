@@ -27,5 +27,10 @@ namespace Lab2.Command
             }
             context.SetState(StateFactory.Create(eState, context));
         }
+
+        public override string ToString()
+        {
+            return eState == EState.DECIDING ? "start game" : "back up";
+        }
     }
 }

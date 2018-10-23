@@ -12,25 +12,18 @@ namespace Lab2.State
         {
         }
 
-        protected override ICommand GetCommand()
+        protected override List<ICommand> GetCommands()
         {
-            int commandId = PrintCommands();
-            if (commandId == 0)
+            List<ICommand> commands = new List<ICommand>();
+            commands.Add(new EndGameCommand(context));
+            foreach(RobotSnapshot snapshot in context.GetRobotSnapshots())
             {
-                return new EndGameCommand(context);
+                commands.Add(new BackUpCommand(context, snapshot));
             }
-            else if (commandId <= context.GetRobotSnapshots().Count)
-            {
-                return new BackUpCommand(context, context.GetRobotSnapshots()[commandId - 1]);
-            }
-            else
-            {
-                Console.WriteLine("Number of action is not correct. Please, try again.");
-                return GetCommand();
-            }
+            return commands;
         }
 
-        private int PrintCommands()
+        private void PrintCommands()
         {
             StringBuilder stringBuilder = new StringBuilder()
                 .AppendLine("Actions: ")
@@ -44,7 +37,6 @@ namespace Lab2.State
             }
 
             stringBuilder.Append("Input number of action: ");
-            return base.PrintCommands(stringBuilder);
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Lab2.Decorator
 {
     public class BadBox : BoxDecorator
     {
-        public BadBox(Box childBox = null) : base(childBox)
+        public BadBox(Box childBox) : base(childBox)
         {
         }
 

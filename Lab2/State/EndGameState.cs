@@ -11,24 +11,16 @@ namespace Lab2.State
         {
         }
 
-        protected override ICommand GetCommand()
+        protected override List<ICommand> GetCommands()
         {
-            int commandId = PrintCommands();
-            switch (commandId)
-            {
-                case 1:
-                    return new StartGameCommand(context, EState.DECIDING, true);
-                case 2:
-                    return new StartGameCommand(context, EState.BACK_UP);
-                case 3:
-                    return new CloseGameCommand(context);
-                default:
-                    Console.WriteLine("Number of action is not correct. Please, try again.");
-                    return GetCommand();
-            }
+            List<ICommand> commands = new List<ICommand>();
+            commands.Add(new StartGameCommand(context, EState.DECIDING, true));
+            commands.Add(new StartGameCommand(context, EState.BACK_UP));
+            commands.Add(new CloseGameCommand(context));
+            return commands;
         }
 
-        private int PrintCommands()
+        private void PrintCommands()
         {
             StringBuilder stringBuilder = new StringBuilder()
                 .AppendLine("Game Over")
@@ -38,7 +30,7 @@ namespace Lab2.State
                 .AppendLine("2. Make back up.")
                 .AppendLine("3. End Game.")
                 .Append("Input number of action: ");
-            return base.PrintCommands(stringBuilder);
+            //return base.PrintCommands(stringBuilder);
         }
     }
 }

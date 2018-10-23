@@ -7,34 +7,26 @@ namespace Lab2.State
 {
     public class StartGameState : State
     {
-
         public StartGameState(Context context) : base(context)
         {
         }
 
-        protected override ICommand GetCommand()
+        protected override List<ICommand> GetCommands()
         {
-            int commandId = PrintCommands();
-            switch (commandId)
-            {
-                case 1:
-                    return new StartGameCommand(context, EState.DECIDING, true);
-                case 2:
-                    return new CloseGameCommand(context);
-                default:
-                    Console.WriteLine("Number of action is not correct. Please, try again.");
-                    return GetCommand();
-            }
+            List<ICommand> commands = new List<ICommand>();
+            commands.Add(new StartGameCommand(context, EState.DECIDING, true));
+            commands.Add(new CloseGameCommand(context));
+            return commands;
         }
 
-        private int PrintCommands()
+        private void PrintCommands()
         {
             StringBuilder stringBuilder = new StringBuilder()
                 .Append("Actions: ").Append("\n")
                 .Append("1. Start playing.").Append("\n")
                 .Append("2. End Game.").Append("\n")
                 .Append("Input number of action: ");
-            return base.PrintCommands(stringBuilder);
+            //return base.PrintCommands(stringBuilder);
         }
     }
 }

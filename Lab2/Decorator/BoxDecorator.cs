@@ -8,7 +8,10 @@ namespace Lab2.Decorator
     {
         protected Box ChildBox { get; private set; }
 
-        public BoxDecorator(Box childBox = null) : base(0, 0) { }
+        public BoxDecorator(Box childBox = null) : base(0, 0)
+        {
+            ChildBox = childBox;
+        }
 
         public BoxDecorator(int cost, int mass, Box childBox = null) : base(cost, mass) { }
 

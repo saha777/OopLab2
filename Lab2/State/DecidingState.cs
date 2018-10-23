@@ -13,27 +13,17 @@ namespace Lab2.State
         {
         }
 
-        protected override ICommand GetCommand()
+        protected override List<ICommand> GetCommands()
         {
-            Box box = BoxFactory.Create();
-            int commandId = PrintCommands(box);
-            switch (commandId)
-            {
-                case 1:
-                    return new OpenCommand(context.Robot, box);
-                case 2:
-                    return new SkipCommand(context.Robot);
-                case 3:
-                    return new MakeSnapshotCommand(context);
-                case 4:
-                    return new EndGameCommand(context);
-                default:
-                    Console.WriteLine("Number of action is not correct. Please, try again.");
-                    return GetCommand();
-            }
+            List<ICommand> commands = new List<ICommand>();
+            commands.Add(new OpenCommand(context));
+            commands.Add(new SkipCommand(context));
+            commands.Add(new MakeSnapshotCommand(context));
+            commands.Add(new EndGameCommand(context));
+            return commands;
         }
         
-        private int PrintCommands(Box box)
+        private void PrintCommands(Box box)
         {
             StringBuilder stringBuilder = new StringBuilder()
                 .AppendLine("Robot state")
@@ -46,7 +36,7 @@ namespace Lab2.State
                 .AppendLine("3. Make snapshot.")
                 .AppendLine("4. End Game.")
                 .Append("Input number of action: ");
-            return base.PrintCommands(stringBuilder);
+            //return base.PrintCommands(stringBuilder);
         }
     }
 }
