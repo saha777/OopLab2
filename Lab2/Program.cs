@@ -18,9 +18,12 @@ namespace Lab2
 
             do
             {
-                List<ICommand> commands = context.Execute(command);
+                List<ICommand> commands = context.GetActions();
+
                 if (commands == null) break;
+
                 command = ChooseCommand(commands, context.Robot);
+                command.Execute();
             } while (command != null);
 
             Console.WriteLine("End program!");

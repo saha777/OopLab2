@@ -17,7 +17,7 @@ namespace Lab2.Command
 
         public void Execute()
         {
-            context.Robot.MinusBattery();
+            context.Robot.MinusBattery(2);
             context.SetState(StateFactory.Create(EState.DECIDING, context));
         }
 

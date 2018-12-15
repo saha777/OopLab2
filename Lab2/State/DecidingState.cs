@@ -13,7 +13,7 @@ namespace Lab2.State
         {
         }
 
-        protected override List<ICommand> GetCommands()
+        public override List<ICommand> GetCommands()
         {
             List<ICommand> commands = new List<ICommand>();
             commands.Add(new OpenCommand(context));
@@ -21,22 +21,6 @@ namespace Lab2.State
             commands.Add(new MakeSnapshotCommand(context));
             commands.Add(new EndGameCommand(context));
             return commands;
-        }
-        
-        private void PrintCommands(Box box)
-        {
-            StringBuilder stringBuilder = new StringBuilder()
-                .AppendLine("Robot state")
-                .AppendLine(context.Robot.ToString())
-                .AppendLine("New box")
-                .AppendLine(box.ToString())
-                .AppendLine("Actions: ")
-                .AppendLine("1. Open box.")
-                .AppendLine("2. Skip box.")
-                .AppendLine("3. Make snapshot.")
-                .AppendLine("4. End Game.")
-                .Append("Input number of action: ");
-            //return base.PrintCommands(stringBuilder);
         }
     }
 }

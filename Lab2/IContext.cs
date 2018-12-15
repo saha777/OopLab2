@@ -7,6 +7,6 @@ namespace Lab2
 {
     public interface IContext
     {
-        List<ICommand> Execute(ICommand command = null);
+        List<ICommand> GetActions();
     }
 }

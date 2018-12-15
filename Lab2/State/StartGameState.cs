@@ -11,7 +11,7 @@ namespace Lab2.State
         {
         }
 
-        protected override List<ICommand> GetCommands()
+        public override List<ICommand> GetCommands()
         {
             List<ICommand> commands = new List<ICommand>();
             commands.Add(new StartGameCommand(context, EState.DECIDING, true));

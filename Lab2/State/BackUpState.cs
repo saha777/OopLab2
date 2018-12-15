@@ -12,7 +12,7 @@ namespace Lab2.State
         {
         }
 
-        protected override List<ICommand> GetCommands()
+        public override List<ICommand> GetCommands()
         {
             List<ICommand> commands = new List<ICommand>();
             commands.Add(new EndGameCommand(context));
@@ -21,22 +21,6 @@ namespace Lab2.State
                 commands.Add(new BackUpCommand(context, snapshot));
             }
             return commands;
-        }
-
-        private void PrintCommands()
-        {
-            StringBuilder stringBuilder = new StringBuilder()
-                .AppendLine("Actions: ")
-                .AppendLine("0. Exit.");
-
-            int count = 0;
-            foreach (var robotSnapshot in context.GetRobotSnapshots())
-            {
-                count++;
-                stringBuilder.AppendLine(count + ": " + robotSnapshot.ToString());
-            }
-
-            stringBuilder.Append("Input number of action: ");
         }
     }
 }

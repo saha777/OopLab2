@@ -16,6 +16,6 @@ namespace Lab2.State
             Commands = GetCommands();
         }
 
-        protected abstract List<ICommand> GetCommands();
+        public abstract List<ICommand> GetCommands();
     }
 }

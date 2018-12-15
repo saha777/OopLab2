@@ -6,65 +6,76 @@ using System.Collections.Generic;
 namespace Lab2Test
 {
     [TestClass]
-    public class ContextTest
+    public class ContextTest : AbstractContextTest
     {
         [TestMethod]
         public void StatesTest()
         {
-            Context context = new Context();
-            List<ICommand> commands = context.Execute();
+            createContext();
+            List<ICommand> commands = _context.GetActions();
             
-            Assert.IsTrue(context.State is StartGameState);
+            Assert.IsTrue(_context.State is StartGameState);
 
-            commands = context.Execute(commands[0]);
+            commands = _context.GetActions();
+            commands[0].Execute();
 
-            Assert.IsTrue(context.State is DecidingState);
-
-
-
-            commands = context.Execute(commands[0]);
-
-            Assert.IsTrue(context.State is DecidingState);
-
-            commands = context.Execute(commands[1]);
-
-            Assert.IsTrue(context.State is DecidingState);
-
-            commands = context.Execute(commands[2]);
-
-            Assert.IsTrue(context.State is DecidingState);
-
-            commands = context.Execute(commands[3]);
-
-            Assert.IsTrue(context.State is EndGameState);
+            Assert.IsTrue(_context.State is DecidingState);
 
 
 
-            commands = context.Execute(commands[0]);
+            commands = _context.GetActions();
+            commands[0].Execute();
 
-            Assert.IsTrue(context.State is DecidingState);
+            Assert.IsTrue(_context.State is DecidingState);
 
-            commands = context.Execute(commands[3]);
+            commands = _context.GetActions();
+            commands[1].Execute();
 
-            Assert.IsTrue(context.State is EndGameState);
+            Assert.IsTrue(_context.State is DecidingState);
 
+            commands = _context.GetActions();
+            commands[2].Execute();
 
+            Assert.IsTrue(_context.State is DecidingState);
 
-            commands = context.Execute(commands[1]);
+            commands = _context.GetActions();
+            commands[3].Execute();
 
-            Assert.IsTrue(context.State is BackUpState);
-
-            commands = context.Execute(commands[1]);
-
-            Assert.IsTrue(context.State is DecidingState);
-
-            commands = context.Execute(commands[3]);
-
-            Assert.IsTrue(context.State is EndGameState);
+            Assert.IsTrue(_context.State is EndGameState);
 
 
-            commands = context.Execute(commands[2]);
-            Assert.IsNull(commands);
+
+            commands = _context.GetActions();
+            commands[0].Execute();
+
+            Assert.IsTrue(_context.State is DecidingState);
+
+            commands = _context.GetActions();
+            commands[3].Execute();
+
+            Assert.IsTrue(_context.State is EndGameState);
+
+
+
+            commands = _context.GetActions();
+            commands[1].Execute();
+
+            Assert.IsTrue(_context.State is BackUpState);
+
+            commands = _context.GetActions();
+            commands[1].Execute();
+
+            Assert.IsTrue(_context.State is DecidingState);
+
+            commands = _context.GetActions();
+            commands[3].Execute();
+
+            Assert.IsTrue(_context.State is EndGameState);
+
+
+            commands = _context.GetActions();
+            commands[2].Execute();
+            Assert.IsNull(_context.GetActions());
         }
     }
 }

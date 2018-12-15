@@ -33,18 +33,8 @@ namespace Lab2.State
             }
         }
 
-        public List<ICommand> Execute(ICommand command = null)
+        public List<ICommand> GetActions()
         {
-            if (State == null)
-            {
-                return null;
-            }
-            else if (command == null)
-            {
-                return State.Commands;
-            }
-
-            command.Execute();
             return State == null ? null : State.Commands;
         }
 

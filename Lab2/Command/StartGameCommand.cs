@@ -21,10 +21,16 @@ namespace Lab2.Command
 
         public void Execute()
         {
+            if (!EState.DECIDING.Equals(eState) && !EState.BACK_UP.Equals(eState))
+            {
+                throw new Exception("Bad state!");
+            }
+
             if (createRobot)
             {
                 context.SetRobot(RobotFactoryInvoker.CreateRobot());
             }
+
             context.SetState(StateFactory.Create(eState, context));
         }
 
